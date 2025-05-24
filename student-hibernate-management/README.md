@@ -60,7 +60,7 @@ CREATE TABLE student (
 );
 ```
 ## Hibernate Configuration
-hibernate.cfg.xml:
+- hibernate.cfg.xml:
 ```bash
 <hibernate-configuration>
   <session-factory>
