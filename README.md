@@ -1,1 +1,1 @@
-# -hibernate-examples-
+# hibernate-examples
