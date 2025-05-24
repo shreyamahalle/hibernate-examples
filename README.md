@@ -1,6 +1,3 @@
-# hibernate-examples
-
-
 # Hibernate Examples
 
 A collection of simple and advanced Hibernate examples demonstrating ORM concepts, CRUD operations, relationships, and Hibernate configurations using Java, MySQL, and Maven.
