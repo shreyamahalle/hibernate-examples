@@ -88,6 +88,61 @@ hibernate.cfg.xml:
 
  - Run Main.java to start the app.
 
+## Project Structure
+
+- **controller**: REST controllers for handling HTTP requests
+- **service**: Business logic layer
+- **repository**: Hibernate data access layer
+- **model**: Entity classes
+- **config**: Hibernate configuration
+
+## API Endpoints
+# Create a New Student
+```bash
+curl -X POST http://localhost:8080/api/studentManagement/student \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "age": 22
+}'
+```
+# Get Student by ID
+```bash
+curl -X GET http://localhost:8080/api/studentManagement/student/1
+```
+#Get All Students
+```bash
+curl -X GET http://localhost:8080/api/studentManagement/students
+
+```
+## Update Existing Student by ID
+```bash
+curl -X PUT http://localhost:8080/api/studentManagement/student/1 \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "John Updated",
+  "email": "john.updated@example.com",
+  "age": 23
+}'
+
+```
+## Delete Student by ID
+```bash
+curl -X DELETE http://localhost:8080/api/studentManagement/student/1
+
+```
+
+## Sample JSON for Student
+```bash
+{
+  "id": 1,
+  "name": "John Doe",
+  "percentage": 90
+}
+
+```
+
 ##  Dependencies (pom.xml)
 ```bash
 
