@@ -1,13 +1,13 @@
 package com.shreya.practice.service;
 
-import com.shreya.practice.repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.shreya.practice.model.Student;
 
-@Service
-public class StudentService {
+import java.util.List;
+import java.util.Optional;
 
-    @Autowired
-    private StudentRepository studentRepository;
-    
+public interface StudentService {
+    Student saveStudent(Student student);
+    List<Student> getAllStudents();
+    Optional<Student> getStudentById(int id);
+    Student deleteStudentById(int id);
 }
