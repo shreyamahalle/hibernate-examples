@@ -30,7 +30,8 @@
         <property name="hbm2ddl.auto">create-drop</property>
 
         <!-- Mapping Class (uncomment and replace with your actual class) -->
-        <!-- <mapping class="com.shreya.practice.model.Student"/> -->
+        <mapping class="com.shreya.practice.model.Student"/>
+
 
     </session-factory>
 </hibernate-configuration>
