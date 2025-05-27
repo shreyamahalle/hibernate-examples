@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 @org.springframework.context.annotation.Configuration
 public class HibernateConfig {
 
-    private static final SessionFactory SESSION_FACTORY = buildSessionFactory();
+    public static final SessionFactory SESSION_FACTORY = buildSessionFactory();
     private static SessionFactory buildSessionFactory(){
 
         try {
