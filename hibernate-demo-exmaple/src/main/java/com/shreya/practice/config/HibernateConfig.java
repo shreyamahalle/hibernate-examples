@@ -18,6 +18,7 @@ public class HibernateConfig {
             throw new RuntimeException(e);
         }
     }
+
     public static void shutdown() {
         SESSION_FACTORY.close();
     }
