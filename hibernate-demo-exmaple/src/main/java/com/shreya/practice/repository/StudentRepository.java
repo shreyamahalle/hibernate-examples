@@ -8,7 +8,10 @@ import java.util.Optional;
 public interface StudentRepository {
 
     Student save(Student student);
+
     List<Student> findAll();
+
     Optional<Student> findById(int id);
+
     Student deleteById(int id);
 }

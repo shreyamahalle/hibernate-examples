@@ -8,7 +8,8 @@ import org.hibernate.cfg.Configuration;
 public class HibernateConfig {
 
     public static final SessionFactory SESSION_FACTORY = buildSessionFactory();
-    private static SessionFactory buildSessionFactory(){
+
+    private static SessionFactory buildSessionFactory() {
 
         try {
             return new Configuration().configure().buildSessionFactory();
@@ -17,7 +18,6 @@ public class HibernateConfig {
             throw new RuntimeException(e);
         }
     }
-
     public static void shutdown() {
         SESSION_FACTORY.close();
     }

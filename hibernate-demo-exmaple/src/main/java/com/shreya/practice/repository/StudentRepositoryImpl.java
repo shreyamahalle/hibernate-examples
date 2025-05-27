@@ -4,8 +4,9 @@ import com.shreya.practice.config.HibernateConfig;
 import com.shreya.practice.model.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.stereotype.Repository;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -52,7 +53,7 @@ public class StudentRepositoryImpl implements StudentRepository {
         Session session = sessionFactory.openSession();
 
         session.beginTransaction();
-        Student tobeDeletedstudent = (Student) session.load(Student.class,id);
+        Student tobeDeletedstudent = session.load(Student.class, id);
         session.delete(tobeDeletedstudent);
         session.getTransaction().commit();
         session.flush();

@@ -17,22 +17,25 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping
-    public ResponseEntity<Student> saveStudent(@RequestBody Student student){
+    public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
         Student savedStudent = studentService.saveStudent(student);
         return ResponseEntity.ok(savedStudent);
     }
+
     @GetMapping("/students")
-    public ResponseEntity<List<Student>> getAllStudents(){
+    public ResponseEntity<List<Student>> getAllStudents() {
         List<Student> students = studentService.getAllStudents();
         return ResponseEntity.ok(students);
     }
+
     @GetMapping("/student/{id}")
-    public ResponseEntity<Student> getStudentById(@PathVariable int id){
+    public ResponseEntity<Student> getStudentById(@PathVariable int id) {
         Optional<Student> student = studentService.getStudentById(id);
-        return student.map(ResponseEntity::ok).orElseGet(()-> ResponseEntity.notFound().build());
+        return student.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
     @DeleteMapping("/student/{id}")
-    public ResponseEntity<Student> deleteStudentById(@PathVariable int id){
+    public ResponseEntity<Student> deleteStudentById(@PathVariable int id) {
         Student deletedStudent = studentService.deleteStudentById(id);
         return (deletedStudent != null) ? ResponseEntity.ok(deletedStudent) : ResponseEntity.notFound().build();
     }

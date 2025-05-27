@@ -2,36 +2,19 @@
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
 <hibernate-configuration>
     <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/foodorder</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
 
-        <!-- JDBC Driver for MySQL 8 -->
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!-- JDBC URL: Replace 'database' with your DB name -->
-        <property name="connection.url">jdbc:mysql://localhost:3306/foodorder</property>
-
-        <!-- Hibernate Dialect for MySQL 8 -->
-        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
-
-        <!-- DB Credentials -->
-        <property name="connection.username">root</property>
-        <property name="connection.password">root</property>
-
-        <!-- Connection Pool Size -->
-        <property name="connection.pool_size">3</property>
-
-        <!-- Optional Settings -->
-        <property name="current_session_context_class">thread</property>
-        <property name="show_sql">true</property>
-        <property name="format_sql">true</property>
-
-        <!-- Auto schema update: create | update | validate | none -->
-        <property name="hbm2ddl.auto">create-drop</property>
-
-        <!-- Mapping Class (uncomment and replace with your actual class) -->
-        <mapping class="com.shreya.practice.model.Student"/>
-
-
+        <mapping resource="student.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
