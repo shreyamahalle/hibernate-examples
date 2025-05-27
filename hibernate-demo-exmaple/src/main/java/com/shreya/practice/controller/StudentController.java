@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/studentManagement")
+@RequestMapping("/api/studentManagement")
 public class StudentController {
 
     @Autowired
@@ -18,8 +18,9 @@ public class StudentController {
 
     @PostMapping
     public ResponseEntity<Student> saveStudent(@RequestBody Student student) {
-        Student savedStudent = studentService.saveStudent(student);
-        return ResponseEntity.ok(savedStudent);
+        System.out.println("Inside controller " + student);
+        Student saveStudent = studentService.saveStudent(student);
+        return ResponseEntity.ok(saveStudent);
     }
 
     @GetMapping("/students")

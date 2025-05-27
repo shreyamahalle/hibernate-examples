@@ -58,7 +58,6 @@ public class StudentRepositoryImpl implements StudentRepository {
         session.getTransaction().commit();
         session.flush();
         session.close();
-
         return tobeDeletedstudent;
     }
 
