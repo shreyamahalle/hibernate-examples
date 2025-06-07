@@ -10,7 +10,7 @@ public class HibernateConfig {
     public static final SessionFactory SESSION_FACTORY = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
-        try{
+        try {
             return new Configuration().configure().buildSessionFactory();
         } catch (HibernateException e) {
             System.err.println("Session factory creation failed : " + e);

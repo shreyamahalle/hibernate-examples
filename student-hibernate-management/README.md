@@ -1,6 +1,8 @@
 # Student Management System (Hibernate + MySQL)
 
-A simple CRUD-based Student Management System built using Java, Hibernate ORM, MySQL, and Maven. This project demonstrates the use of Hibernate for performing basic operations such as Create, Read, Update, and Delete on a `Student` entity.
+A simple CRUD-based Student Management System built using Java, Hibernate ORM, MySQL, and Maven. This project
+demonstrates the use of Hibernate for performing basic operations such as Create, Read, Update, and Delete on a
+`Student` entity.
 
 ---
 
@@ -16,6 +18,7 @@ A simple CRUD-based Student Management System built using Java, Hibernate ORM, M
 ---
 
 ## 📂 Project Structure
+
 ```properties
 src/
 ├── main/
@@ -59,8 +62,11 @@ CREATE TABLE student (
   course VARCHAR(100) NOT NULL
 );
 ```
+
 ## Hibernate Configuration
+
 - hibernate.cfg.xml:
+
 ```bash
 <hibernate-configuration>
   <session-factory>
@@ -78,15 +84,16 @@ CREATE TABLE student (
 ```
 
 ## How to Run
- - Clone the repository.
 
- - Import as Maven Project in your IDE.
+- Clone the repository.
 
- - Set your MySQL credentials in hibernate.cfg.xml.
+- Import as Maven Project in your IDE.
 
- - Create the database studentdb.
+- Set your MySQL credentials in hibernate.cfg.xml.
 
- - Run Main.java to start the app.
+- Create the database studentdb.
+
+- Run Main.java to start the app.
 
 ## Project Structure
 
@@ -97,7 +104,9 @@ CREATE TABLE student (
 - **config**: Hibernate configuration
 
 ## API Endpoints
+
 # Create a New Student
+
 ```bash
 curl -X POST http://localhost:8080/api/studentManagement/student \
 -H "Content-Type: application/json" \
@@ -107,16 +116,22 @@ curl -X POST http://localhost:8080/api/studentManagement/student \
   "age": 22
 }'
 ```
+
 # Get Student by ID
+
 ```bash
 curl -X GET http://localhost:8080/api/studentManagement/student/1
 ```
+
 #Get All Students
+
 ```bash
 curl -X GET http://localhost:8080/api/studentManagement/students
 
 ```
+
 ## Update Existing Student by ID
+
 ```bash
 curl -X PUT http://localhost:8080/api/studentManagement/student/1 \
 -H "Content-Type: application/json" \
@@ -127,13 +142,16 @@ curl -X PUT http://localhost:8080/api/studentManagement/student/1 \
 }'
 
 ```
+
 ## Delete Student by ID
+
 ```bash
 curl -X DELETE http://localhost:8080/api/studentManagement/student/1
 
 ```
 
 ## Sample JSON for Student
+
 ```bash
 {
   "id": 1,
@@ -143,7 +161,8 @@ curl -X DELETE http://localhost:8080/api/studentManagement/student/1
 
 ```
 
-##  Dependencies (pom.xml)
+## Dependencies (pom.xml)
+
 ```bash
 
     <properties>

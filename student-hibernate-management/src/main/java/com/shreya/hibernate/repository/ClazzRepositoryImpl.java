@@ -1,4 +1,5 @@
 package com.shreya.hibernate.repository;
+
 import com.shreya.hibernate.config.HibernateConfig;
 import com.shreya.hibernate.exception.StudentNotFoundException;
 import com.shreya.hibernate.model.Clazz;

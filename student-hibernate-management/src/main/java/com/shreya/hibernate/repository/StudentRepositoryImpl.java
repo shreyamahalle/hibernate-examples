@@ -3,8 +3,8 @@ package com.shreya.hibernate.repository;
 import com.shreya.hibernate.config.HibernateConfig;
 import com.shreya.hibernate.model.Student;
 import org.hibernate.Session;
-import org.hibernate.query.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

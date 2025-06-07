@@ -1,4 +1,5 @@
 package com.shreya.hibernate.controller;
+
 import com.shreya.hibernate.model.Student;
 import com.shreya.hibernate.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;

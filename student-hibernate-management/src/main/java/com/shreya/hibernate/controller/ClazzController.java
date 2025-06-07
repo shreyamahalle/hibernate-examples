@@ -1,4 +1,5 @@
 package com.shreya.hibernate.controller;
+
 import com.shreya.hibernate.model.Clazz;
 import com.shreya.hibernate.model.Student;
 import com.shreya.hibernate.service.ClazzService;

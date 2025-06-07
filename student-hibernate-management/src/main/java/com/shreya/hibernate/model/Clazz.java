@@ -1,4 +1,5 @@
 package com.shreya.hibernate.model;
+
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,13 +15,11 @@ import java.util.List;
 @Table(name = "clazz")
 public class Clazz {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String className;
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "clazz_id") // foreign key inn Student table
     List<Student> students = new ArrayList<>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String className;
 }
