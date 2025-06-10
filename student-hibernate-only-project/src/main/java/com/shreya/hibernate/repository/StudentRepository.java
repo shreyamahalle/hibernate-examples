@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 
 public class StudentRepository {
     public void saveStudent(Student student) {
+
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction(); //Hibernate transaction
