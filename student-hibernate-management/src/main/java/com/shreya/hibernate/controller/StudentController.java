@@ -58,6 +58,4 @@ public class StudentController {
         List<Student> students = service.findStudentWithPagination(page, size);
         return ResponseEntity.ok(students);
     }
-
-
 }
