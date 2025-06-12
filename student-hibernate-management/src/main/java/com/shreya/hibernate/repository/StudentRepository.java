@@ -17,4 +17,5 @@ public interface StudentRepository {
     Student updateStudent(int id);
 
     Student updateStudent(int id, Student updatedStudent);
+    List<Student> findStudentWithPagination(int page, int size);
 }

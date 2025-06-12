@@ -46,4 +46,9 @@ public class StudentService {
         existingStudent.setPercentage(updatedStudent.getPercentage());
         return studentRepository.save(existingStudent);
     }
+    public List<Student> findStudentWithPagination(int page, int size) {
+        List<Student> students = studentRepository.findStudentWithPagination(page, size);
+        System.out.println("retrieved pagination data - " + students);
+        return students;
+    }
 }

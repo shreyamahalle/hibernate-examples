@@ -45,4 +45,12 @@ public class StudentController {
         return new ResponseEntity<>(service.updateStudent(studentId, updatedStudent), HttpStatus.OK);
     }
 
+    @GetMapping("/students/pagination")
+    public ResponseEntity<List<Student>> retrieveStudent(
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "size", defaultValue = "10") int size) {
+        System.out.println(page + "|" + size);
+        return new ResponseEntity<>(service.findStudentWithPagination(page, size), HttpStatus.OK);
+    }
+
 }

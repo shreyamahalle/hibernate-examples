@@ -84,4 +84,12 @@ public class StudentRepositoryImpl implements StudentRepository {
 
         return existingStudent;
     }
+    @Override
+    public List<Student> findStudentWithPagination(int page, int size) {
+        Session session = sessionFactory.openSession();
+        return session.createQuery("from student")
+                .setFirstResult((page - 1) * size)
+                .setMaxResults(size)
+                .list();
+    }
 }
