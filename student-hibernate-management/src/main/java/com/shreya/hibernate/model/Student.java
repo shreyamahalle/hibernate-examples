@@ -4,7 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import javax.persistence.Cacheable;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -13,8 +13,15 @@ import javax.persistence.Cacheable;
 @Builder
 @Cacheable
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@Entity                      // ✅ Required for Hibernate to treat this as a mapped entity
+@Table(name = "student")     // ✅ Optional: specify DB table name
 public class Student {
-    int id;
-    String name;
-    double percentage;
+
+    @Id                     // ✅ Required: Primary Key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Optional: Auto-increment
+    private int id;
+
+    private String name;
+
+    private double percentage;
 }

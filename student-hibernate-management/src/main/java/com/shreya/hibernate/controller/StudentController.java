@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -47,10 +48,16 @@ public class StudentController {
 
     @GetMapping("/students/pagination")
     public ResponseEntity<List<Student>> retrieveStudent(
-            @RequestParam(name = "page", defaultValue = "0") int page,
-            @RequestParam(name = "size", defaultValue = "10") int size) {
-        System.out.println(page + "|" + size);
-        return new ResponseEntity<>(service.findStudentWithPagination(page, size), HttpStatus.OK);
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        if (page < 1 || size < 1) {
+            return ResponseEntity.badRequest().body(Collections.emptyList());
+        }
+
+        List<Student> students = service.findStudentWithPagination(page, size);
+        return ResponseEntity.ok(students);
     }
+
 
 }

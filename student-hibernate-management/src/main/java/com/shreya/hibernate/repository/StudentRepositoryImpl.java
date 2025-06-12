@@ -84,12 +84,20 @@ public class StudentRepositoryImpl implements StudentRepository {
 
         return existingStudent;
     }
+
     @Override
     public List<Student> findStudentWithPagination(int page, int size) {
+        if (page < 1) {
+            throw new IllegalArgumentException("Page number must be >= 1");
+        }
+
         Session session = sessionFactory.openSession();
-        return session.createQuery("from student")
+        List<Student> students = session.createQuery("from Student", Student.class)
                 .setFirstResult((page - 1) * size)
                 .setMaxResults(size)
                 .list();
+        session.close();
+        return students;
     }
+
 }
