@@ -29,6 +29,7 @@
         <property name="connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
 
         <mapping resource="student.hbm.xml"/>
+        <mapping class="com.shreya.hibernate.model.Clazz"/>
     </session-factory>
 </hibernate-configuration>
 

@@ -20,19 +20,19 @@ public class ClazzController {
     @PostMapping("/clazz")
     public ResponseEntity<Clazz> createClazz(@RequestBody Clazz clazz) {
         System.out.println("Inside controller: " + clazz);
-        return new ResponseEntity(service.createClazz(clazz), HttpStatus.CREATED);
+        return new ResponseEntity<>(service.createClazz(clazz), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/student/{id}")
     public ResponseEntity<Student> createStudent(@PathVariable("id") int studentId) {
         System.out.println("Inside controller: " + studentId);
-        return new ResponseEntity(service.deleteStudent(studentId), HttpStatus.OK);
+        return new ResponseEntity<>(service.deleteStudent(studentId), HttpStatus.OK);
     }
 
     @GetMapping("/student/{id}")
     public ResponseEntity<Student> retrieveStudent(@PathVariable("id") int studentId) {
         System.out.println("Inside controller: " + studentId);
-        return new ResponseEntity(service.retrieveStudent(studentId), HttpStatus.OK);
+        return new ResponseEntity<>(service.retrieveStudent(studentId), HttpStatus.OK);
     }
 
     @GetMapping("/students")

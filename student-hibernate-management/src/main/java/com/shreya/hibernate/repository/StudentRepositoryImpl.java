@@ -1,6 +1,7 @@
 package com.shreya.hibernate.repository;
 
 import com.shreya.hibernate.config.HibernateConfig;
+import com.shreya.hibernate.model.Clazz;
 import com.shreya.hibernate.model.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Repository("studentRepository")
 public class StudentRepositoryImpl implements StudentRepository {

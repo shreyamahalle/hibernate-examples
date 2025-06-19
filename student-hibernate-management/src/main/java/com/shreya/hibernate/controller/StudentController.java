@@ -24,7 +24,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/student/{id}")
-    public ResponseEntity<Student> createStudent(@PathVariable("id") int studentId) {
+    public ResponseEntity<Student> deleteStudent(@PathVariable("id") int studentId) {
         System.out.println("Inside controller: " + studentId);
         return new ResponseEntity<>(service.deleteStudent(studentId), HttpStatus.OK);
     }
