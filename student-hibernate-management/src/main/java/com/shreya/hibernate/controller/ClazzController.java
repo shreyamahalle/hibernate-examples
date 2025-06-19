@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/clazzManagement")
@@ -39,4 +40,11 @@ public class ClazzController {
     public List<Student> retrieveStudent() {
         return service.retrieveStudents();
     }
+    @GetMapping("/clazzes/pagination")
+    public ResponseEntity<Set<Clazz>> getPaginatedClazzes(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "5") int size) {
+        return new ResponseEntity<>(service.getClazzWithPagination(page, size), HttpStatus.OK);
+    }
+
 }

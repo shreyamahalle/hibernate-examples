@@ -78,7 +78,7 @@ public class ClazzRepositoryImpl implements ClazzRepository {
     @Override
     public Set<Clazz> findClazzWithPagination(int page, int size) {
         Session session = sessionFactory.openSession();
-        return (Set<Clazz>) session.createQuery("from clazz")
+        return (Set<Clazz>) session.createQuery("from Clazz", Clazz.class)
                 .setFirstResult((page - 1) * size)
                 .setMaxResults(size)
                 .list().parallelStream().collect(Collectors.toSet());

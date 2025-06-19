@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class ClazzService {
@@ -41,5 +42,9 @@ public class ClazzService {
 
     public List<Student> retrieveStudents() {
         return studentRepository.findAll();
+
+    }
+    public Set<Clazz> getClazzWithPagination(int page, int size) {
+        return clazzRepository.findClazzWithPagination(page, size);
     }
 }
