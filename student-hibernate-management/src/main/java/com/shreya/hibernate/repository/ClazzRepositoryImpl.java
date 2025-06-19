@@ -63,7 +63,7 @@ public class ClazzRepositoryImpl implements ClazzRepository {
         Session session = sessionFactory.openSession();
 
         session.beginTransaction();
-        Clazz tobeDeletedClazz = (Clazz) session.load(Clazz.class, id);
+        Clazz tobeDeletedClazz = session.load(Clazz.class, id);
         if (tobeDeletedClazz != null) {
             session.delete(tobeDeletedClazz);
         } else {
